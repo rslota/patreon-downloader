@@ -6,7 +6,7 @@ const getLazyLoadedImages = require("../js/lazyLoadImages");
 const downloadTagAndOrganiseFiles = require("../js/files");
 
 async function main() {
-    const browser = await puppeteer.launch({headless: true});
+    const browser = await puppeteer.launch({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox']});
     const page = await browser.newPage();
     const waitTime = 0.5;
 
